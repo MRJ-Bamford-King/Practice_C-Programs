@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TimeStructureTest
+{
+    // Structure Constructor
+    struct Time
+    {
+        public int hours, minutes, seconds;
+        public Time(int hh, int mm, int ss)
+        {
+            hours = hh;     //assign constructor variables
+            minutes = mm;
+            seconds = ss;
+        }
+    }
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Time currentTime;       //Creates first instance of Time structure. Structures are very similar to classes in C#.
+
+            currentTime.hours = 5;  //Change value of hours.
+
+            Time now = new Time();  //Creates second instance of structure.
+
+            Console.WriteLine(now.hours.ToString());            //Hours equals zero in the new instance due to default constructor. It would be an unknown value if the construcor wasn't there to initialize all the variables.
+            Console.WriteLine(currentTime.hours.ToString());    //Hours equals 5 in the currentTime Instance.
+            Console.ReadKey();
+        }
+    }
+}
