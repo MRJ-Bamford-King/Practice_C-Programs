@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO; // enables streams
 
 namespace ThisCmd_Test
 {
@@ -51,7 +52,17 @@ namespace ThisCmd_Test
             // Display results:
             E1.printEmployee();
             Console.ReadKey();
+            Console.Clear();
 
+            //Create a new file for writing
+            Stream outStream = new FileStream(fileName, FileMode.Create);
+
+            StreamWriter sw = new StreamWriter("test_out.txt");
+            //Writes a line to the file
+            sw.Write("Hello ");
+            sw.WriteLine("World!"); //this method adds a CR + LF to the end
+            //Close the file stream
+            sw.Close();
         }
     }
 }
